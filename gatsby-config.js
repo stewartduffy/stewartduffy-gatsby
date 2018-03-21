@@ -4,12 +4,13 @@ module.exports = {
     description: 'Made with Gatsby!',
   },
   plugins: [
+    `gatsby-plugin-sass`,
     {
       resolve: 'gatsby-source-contentful',
       options: {
-        spaceId: 'komzmzdpg14i',
+        spaceId: 'yp5gwejfy67m',
         accessToken:
-          '86fcc6be11f501130a705209f3d85865710cff4d9fc2515aa570c0d7e6adc528',
+          'af31950799415738e1f52d5f4a9c1a68d1109fafd0743923d4db48a04d3c8154',
       },
     },
     'gatsby-plugin-react-helmet',
@@ -25,13 +26,6 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'img',
-        path: `${__dirname}/src/images`,
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'img',
         path: `${__dirname}/static/assets`,
       },
     },
@@ -41,5 +35,3 @@ module.exports = {
     'gatsby-transformer-remark',
   ],
 }
-
-// pathPrefix: '/levelupgatsby',
