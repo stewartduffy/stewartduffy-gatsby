@@ -1,0 +1,37 @@
+.content-block {
+  svg {
+    width: 60px;
+    height: auto;
+
+    path {
+      fill: #323232;
+    }
+  }
+}
+
+.content-block-html {
+  margin-bottom: 30px;
+
+  h3 {
+    font-weight: 600;
+    margin-top: 0;
+  }
+
+  ul em {
+    font-size: 85%;
+    display: block;
+  }
+
+  p,
+  li {
+    font-size: 22px;
+  }
+
+  li {
+    margin-bottom: 10px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
