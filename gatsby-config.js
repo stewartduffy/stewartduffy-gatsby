@@ -1,10 +1,18 @@
+const autoprefixer = require('autoprefixer')
+const path = require('path')
+
 module.exports = {
   siteMetadata: {
     title: 'Stewart Duffy ~ Front End Dev',
     description: 'Made with Gatsby!',
   },
   plugins: [
-    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-postcss-sass`,
+      options: {
+        postCssPlugins: [autoprefixer()],
+      },
+    },
     {
       resolve: 'gatsby-source-contentful',
       options: {
@@ -29,9 +37,12 @@ module.exports = {
         path: `${__dirname}/static/assets`,
       },
     },
-
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        include: [path.resolve(__dirname, 'src/svg-icons/')],
+      },
+    },
     'gatsby-transformer-remark',
   ],
 }
