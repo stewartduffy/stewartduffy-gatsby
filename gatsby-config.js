@@ -8,6 +8,12 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`andada`, 'Oswald', 'Merriweather'],
+      },
+    },
+    {
       resolve: `gatsby-plugin-postcss-sass`,
       options: {
         postCssPlugins: [autoprefixer()],
