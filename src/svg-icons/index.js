@@ -311,7 +311,7 @@ export { default as coffee } from './coffee.svg'
 // gift.svg
 // git-square.svg
 // git.svg
-// github-alt.svg
+export { default as githubAlt } from './github-alt.svg'
 // github-square.svg
 // github.svg
 // gitlab.svg
@@ -412,7 +412,7 @@ export { default as coffee } from './coffee.svg'
 // line-chart.svg
 // link.svg
 // linkedin-square.svg
-// linkedin.svg
+export { default as linkedin } from './linkedin.svg'
 // linode.svg
 // linux.svg
 // list-alt.svg
@@ -590,7 +590,7 @@ export { default as phone } from './phone.svg'
 // simplybuilt.svg
 // sitemap.svg
 // skyatlas.svg
-// skype.svg
+export { default as skype } from './skype.svg'
 // slack.svg
 // sliders.svg
 // slideshare.svg
@@ -615,7 +615,7 @@ export { default as phone } from './phone.svg'
 // space-shuttle.svg
 // spinner.svg
 // spoon.svg
-// spotify.svg
+export { default as spotify } from './spotify.svg'
 // square-o.svg
 // square.svg
 // stack-exchange.svg
@@ -712,7 +712,7 @@ export { default as phone } from './phone.svg'
 // tv.svg
 // twitch.svg
 // twitter-square.svg
-// twitter.svg
+export { default as twitter } from './twitter.svg'
 // umbrella.svg
 // underline.svg
 // undo.svg

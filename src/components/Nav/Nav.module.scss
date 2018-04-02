@@ -1,3 +1,5 @@
+@import '../../scss/fonts.scss';
+
 .nav-container {
   background: #323232;
   height: 53px;
@@ -30,8 +32,12 @@
 .nav-item-link {
   color: #fff;
   font-size: 22px;
-  font-family: 'andadabold';
+  font-family: 'Andada', $systemMonospace;
   line-height: 53px;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .nav-icon {

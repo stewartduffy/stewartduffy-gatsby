@@ -1,26 +1,22 @@
 import React from 'react'
 import Link from 'gatsby-link'
-
 import { ContentBlock } from '../components/ContentBlock'
+import styles from './index.module.scss'
 
 const IndexPage = ({ data }) => {
   if (!data) return null
-
   return (
-    <div>
-      <div className="container main-container">
-        <div className="main">
-          {data.contentfulPostPage.contentBlock.map(
-            ({ id, childContentfulContentBlockBodyTextNode, icon }) => (
-              <ContentBlock
-                key={id}
-                icon={icon}
-                data={childContentfulContentBlockBodyTextNode}
-              />
-            )
-          )}
-        </div>
-      </div>
+    <div className={`container ${styles['main-container']}`}>
+      {data.contentfulPostPage.contentBlock.map(
+        ({ id, childContentfulContentBlockBodyTextNode, icon, slug }) => (
+          <ContentBlock
+            key={id}
+            slug={slug}
+            icon={icon}
+            data={childContentfulContentBlockBodyTextNode}
+          />
+        )
+      )}
     </div>
   )
 }
@@ -41,6 +37,7 @@ export const query = graphql`
       contentBlock {
         id
         icon
+        slug
         childContentfulContentBlockBodyTextNode {
           id
           childMarkdownRemark {

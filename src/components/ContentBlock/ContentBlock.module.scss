@@ -11,20 +11,20 @@
 
 .content-block-html {
   margin-bottom: 30px;
+  font-family: 'Merriweather', serif;
+  font-weight: 300;
+  font-size: 16px; //@TODO: Maybe style the p, li etc
 
+  h1,
+  h2,
   h3 {
-    font-weight: 600;
     margin-top: 0;
+    font-family: 'Oswald', sans-serif;
   }
 
   ul em {
     font-size: 85%;
     display: block;
-  }
-
-  p,
-  li {
-    font-size: 22px;
   }
 
   li {
