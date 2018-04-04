@@ -6,6 +6,7 @@ import { Icon } from '../Icon'
 import { NavIcon } from '../NavIcon'
 import { NavItem } from '../NavItem'
 import styles from './Nav.module.scss'
+import cv from '../../../static/assets/stewart_duffy_cv.pdf'
 
 const Nav = () => (
   <div className={`${styles['nav-container']} clearfix`}>
@@ -27,7 +28,7 @@ const Nav = () => (
         <NavItem text="What I Do" href="#what-i-do" />
         <NavItem text="Work" href="#work-history" />
         <NavItem text="Contact" href="#lets-talk" />
-        <NavItem text="CV" href="/assets/stewart_duffy_cv.pdf" />
+        <NavItem text="CV" href={cv} />
       </nav>
     </div>
   </div>
