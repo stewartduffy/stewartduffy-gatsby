@@ -3,27 +3,14 @@ import ReactDOM from 'react-dom'
 import Link, { navigateTo } from 'gatsby-link'
 
 import { Icon } from '../Icon'
-
+import { NavIcon } from '../NavIcon'
+import { NavItem } from '../NavItem'
 import styles from './Nav.module.scss'
-
-const NavIcon = ({ iconClass, href }) => (
-  <a className={styles['nav-icon']} href={href}>
-    <Icon name={iconClass} />
-  </a>
-)
-
-const NavItem = ({ text, href }) => (
-  <span className={styles['nav-item']}>
-    <a className={styles['nav-item-link']} href={href}>
-      {text}
-    </a>
-  </span>
-)
 
 const Nav = () => (
   <div className={`${styles['nav-container']} clearfix`}>
-    <div className="container">
-      <nav className="pull-left hidden-xs">
+    <div className="container-fluid">
+      <nav className={`${styles['nav-social']} pull-left hidden-xs`}>
         <NavIcon
           iconClass="linkedin"
           href="http://nz.linkedin.com/in/stewartduffy/en"
@@ -37,9 +24,10 @@ const Nav = () => (
         />
       </nav>
       <nav className="pull-right hidden-xs">
-        {/* <NavItem text="about" href="/" /> */}
-        <NavItem text="contact" href="#lets-talk" />
-        <NavItem text="cv" href="/assets/stewart_duffy_cv.pdf" />
+        <NavItem text="What I Do" href="#what-i-do" />
+        <NavItem text="Work" href="#work-history" />
+        <NavItem text="Contact" href="#lets-talk" />
+        <NavItem text="CV" href="/assets/stewart_duffy_cv.pdf" />
       </nav>
     </div>
   </div>

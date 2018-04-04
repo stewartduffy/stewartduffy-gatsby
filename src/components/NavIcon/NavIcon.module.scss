@@ -1,0 +1,21 @@
+.nav-icon {
+  display: flex;
+  align-items: center;
+  height: 53px;
+  padding: 5px;
+
+  svg {
+    width: 24px;
+    height: auto;
+
+    path {
+      fill: #fff;
+    }
+
+    &:hover {
+      path {
+        fill: #657e6c;
+      }
+    }
+  }
+}

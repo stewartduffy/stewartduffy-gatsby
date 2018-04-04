@@ -1,4 +1,5 @@
 @import '../../scss/fonts.scss';
+@import '../../scss/vender/bootstrap/_variables';
 
 .nav-container {
   background: #323232;
@@ -22,48 +23,14 @@
 
 .nav-item {
   & + &::before {
-    content: ' / ';
+    padding: 5px;
+    content: ' • ';
     :hover {
       color: #fff;
     }
   }
 }
 
-.nav-item-link {
-  color: #fff;
-  font-size: 22px;
-  font-family: 'Andada', $systemMonospace;
-  line-height: 53px;
-
-  &:hover {
-    text-decoration: none;
-  }
-}
-
-.nav-icon {
-  height: 53px;
-
-  i {
-    color: #fff;
-    font-size: 26px;
-    line-height: 53px;
-    display: inline-block;
-    width: 1.28571em;
-    text-align: center;
-
-    svg {
-      width: 24px;
-      height: auto;
-
-      path {
-        fill: #fff;
-      }
-
-      &:hover {
-        path {
-          fill: #657e6c;
-        }
-      }
-    }
-  }
+.nav-social {
+  display: flex;
 }
