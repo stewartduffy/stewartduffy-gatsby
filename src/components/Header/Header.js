@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Link, { navigateTo } from 'gatsby-link'
 import { Nav } from '../Nav'
-import logo from '../../img/logo.svg'
+import logo from '../../img/logo-compressed.svg'
 import styles from './Header.module.scss'
 
 const Header = ({ data, location }) => (
