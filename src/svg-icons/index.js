@@ -12,7 +12,7 @@
 // amazon.svg
 // ambulance.svg
 // american-sign-language-interpreting.svg
-export { default as anchor } from './anchor.svg'
+// export { default as anchor } from './anchor.svg'
 // android.svg
 // angellist.svg
 // angle-double-down.svg
@@ -396,6 +396,7 @@ export { default as githubAlt } from './github-alt.svg'
 // krw.svg
 // language.svg
 // laptop.svg
+export { default as laptop } from './laptop.svg'
 // lastfm-square.svg
 // lastfm.svg
 // leaf.svg
