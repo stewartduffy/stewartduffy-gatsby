@@ -7,6 +7,8 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
 
   nav {
     height: 53px;
@@ -17,16 +19,6 @@
       &.active {
         color: #657e6c;
       }
-    }
-  }
-}
-
-.nav-item {
-  & + &::before {
-    padding: 5px;
-    content: ' • ';
-    :hover {
-      color: #fff;
     }
   }
 }
