@@ -1,27 +1,15 @@
 @import '../../scss/fonts.scss';
 @import '../../scss/vender/bootstrap/_variables';
+@import '../../scss/theme';
 
 .nav-item {
+  line-height: 53px;
+
   & + &::before {
     padding: 5px;
     content: ' • ';
     :hover {
-      color: #fff;
+      color: $theme-white;
     }
-  }
-}
-
-.nav-item-link {
-  color: #fff;
-  font-size: 20px;
-  font-family: 'Oswald', sans-serif;
-  line-height: 53px;
-
-  &:hover {
-    text-decoration: none;
-  }
-
-  @media (min-width: $screen-md) {
-    font-size: 22px;
   }
 }

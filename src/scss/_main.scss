@@ -1,7 +1,7 @@
 @import './fonts.scss';
 
 body {
-  background: #cbcbcb;
-  color: #323232;
+  background: $theme-canvas;
+  color: $theme-black;
   font-family: $systemSerif;
 }

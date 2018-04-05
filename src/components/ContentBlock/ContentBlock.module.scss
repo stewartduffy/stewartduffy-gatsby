@@ -1,3 +1,5 @@
+@import '../../scss/theme';
+
 .content-block {
   padding-top: 32px;
 
@@ -10,7 +12,7 @@
     height: auto;
 
     path {
-      fill: #323232;
+      fill: $theme-black;
     }
   }
 }

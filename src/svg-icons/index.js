@@ -56,7 +56,7 @@
 // bar-chart-o.svg
 // bar-chart.svg
 // barcode.svg
-// bars.svg
+export { default as bars } from './bars.svg'
 // bath.svg
 // bathtub.svg
 // battery-0.svg
@@ -683,10 +683,10 @@ export { default as spotify } from './spotify.svg'
 // thumbs-up.svg
 // ticket.svg
 // times-circle-o.svg
-// times-circle.svg
+export { default as timesCircle } from './times-circle.svg'
 // times-rectangle-o.svg
 // times-rectangle.svg
-// times.svg
+export { default as times } from './times.svg'
 // tint.svg
 // toggle-down.svg
 // toggle-left.svg

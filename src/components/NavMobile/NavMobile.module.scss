@@ -1,0 +1,58 @@
+@import '../../scss/theme';
+
+.c-navigation {
+  background: #323232;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  max-width: calc(100% - 40px);
+  max-height: calc(100% - 40px);
+  z-index: 99;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+
+  > div {
+    //@TODO: Give this a class
+    text-align: right;
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: 0;
+  }
+}
+
+.c-navigation__list {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0;
+
+  li {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  a {
+    padding: 10px;
+    display: block;
+  }
+}
+
+.c-overlay {
+  pointer-events: auto;
+  opacity: 0.5;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 90;
+  background-color: $theme-black;
+  pointer-events: none;
+}

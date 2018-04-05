@@ -1,8 +1,9 @@
 @import '../../scss/fonts.scss';
 @import '../../scss/vender/bootstrap/_variables';
+@import '../../scss/theme';
 
 .nav-container {
-  background: #323232;
+  background: $theme-black;
   height: 53px;
   position: absolute;
   bottom: 0;
@@ -12,14 +13,7 @@
 
   nav {
     height: 53px;
-    color: #fff;
-
-    a {
-      &:hover,
-      &.active {
-        color: #657e6c;
-      }
-    }
+    color: $theme-white;
   }
 }
 
