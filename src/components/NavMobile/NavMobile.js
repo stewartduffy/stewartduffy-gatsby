@@ -4,12 +4,37 @@ import Link, { navigateTo } from 'gatsby-link'
 import { NavLink } from '../NavLink'
 import { NavIcon } from '../NavIcon'
 import styles from './NavMobile.module.scss'
+import cv from '../../../static/assets/stewart_duffy_cv.pdf'
+
+const links = [
+  {
+    text: 'What I Do',
+    href: '#what-i-do',
+  },
+  {
+    text: 'Conferences & Workshops',
+    href: '#conferences-workshops',
+  },
+  {
+    text: 'Work',
+    href: '#work-history',
+  },
+  {
+    text: 'Contact',
+    href: '#lets-talk',
+  },
+  {
+    text: 'CV',
+    href: cv,
+  },
+]
 
 const NavMobile = class extends React.Component {
   constructor(props) {
     super(props)
 
     this.escFunction = this.escFunction.bind(this)
+    this.onNavLinkClick = this.onNavLinkClick.bind(this)
   }
 
   escFunction(event) {
@@ -17,9 +42,15 @@ const NavMobile = class extends React.Component {
       this.props.handleMenuClick()
     }
   }
+
+  onNavLinkClick(event) {
+    this.props.handleMenuClick()
+  }
+
   componentDidMount() {
     document.addEventListener('keydown', this.escFunction, false)
   }
+
   componentWillUnmount() {
     document.removeEventListener('keydown', this.escFunction, false)
   }
@@ -28,26 +59,23 @@ const NavMobile = class extends React.Component {
     const { handleMenuClick } = this.props
     return ReactDOM.createPortal(
       <React.Fragment>
-        <nav className={`${styles['c-navigation']}`} role="navigation">
-          <div>
+        <nav className={`${styles['nav-mobile']}`} role="navigation">
+          <div className={`${styles['nav-mobile-close']}`}>
             <NavIcon iconClass="times" onClick={handleMenuClick} />
           </div>
-          <ul className={`${styles['c-navigation__list']}`}>
-            <li>
-              <NavLink text="What I Do" href="#what-i-do" />
-            </li>
-            <li>
-              <NavLink text="Work" href="#work-history" />
-            </li>
-            <li>
-              <NavLink text="Contact" href="#lets-talk" />
-            </li>
-            <li>
-              <NavLink text="CV" href={'#cv'} />
-            </li>
+          <ul className={`${styles['nav-mobile-list']}`}>
+            {links.map(({ text, href }, id) => (
+              <li key={`MobileNavLink-${id}`}>
+                <NavLink
+                  text={text}
+                  href={href}
+                  onClick={this.onNavLinkClick}
+                />
+              </li>
+            ))}
           </ul>
         </nav>
-        <div className={styles['c-overlay']} />
+        <div className={styles['nav-mobile-overlay']} />
       </React.Fragment>,
       document.getElementById('___gatsby')
     )
