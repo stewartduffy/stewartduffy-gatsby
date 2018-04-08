@@ -1,8 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import MyContext from '../context'
 import { Header } from '../components/Header'
 import '../scss/base.scss'
+import styles from './layout.module.scss'
 
 import appleIcon57x57 from '../../static/favicons/apple-icon-57x57.png'
 import appleIcon60x60 from '../../static/favicons/apple-icon-60x60.png'
@@ -91,26 +93,70 @@ const icons = [
   },
 ]
 
-const TemplateWrapper = ({ children, data, location }) => (
-  <div>
-    <Helmet
-      title={data.site.siteMetadata.title}
-      meta={[
-        { name: 'description', content: data.site.siteMetadata.description },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
-    >
-      {icons.map((icon, id) => <link key={`icon-${id}`} {...icon} />)}
+class MyProvider extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      mobileNavOpen: false,
+    }
 
-      {/* @TODO: Updates the following meta */}
-      <meta name="msapplication-TileColor" content="#ffffff" />
-      <meta name="msapplication-TileImage" content={msIcon144x144} />
-      <meta name="theme-color" content="#ffffff" />
-      {/* @TODO: Check the above ^^ */}
-    </Helmet>
-    <Header data={data} location={location} />
-    <div>{children()}</div>
-  </div>
+    this.toggleMobileNavOpen = this.toggleMobileNavOpen.bind(this)
+  }
+
+  toggleMobileNavOpen() {
+    this.setState({
+      mobileNavOpen: !this.state.mobileNavOpen,
+    })
+  }
+
+  render() {
+    return (
+      <MyContext.Provider
+        value={{
+          state: this.state,
+          toggleMobileNavOpen: this.toggleMobileNavOpen,
+        }}
+      >
+        {this.props.children}
+      </MyContext.Provider>
+    )
+  }
+}
+
+const TemplateWrapper = ({ children, data, location }) => (
+  <MyProvider>
+    <MyContext.Consumer>
+      {context => (
+        <div
+          className={
+            context.state.mobileNavOpen ? styles['mobile-nav-open'] : null
+          }
+        >
+          <Helmet
+            title={data.site.siteMetadata.title}
+            meta={[
+              {
+                name: 'description',
+                content: data.site.siteMetadata.description,
+              },
+              { name: 'keywords', content: 'sample, something' },
+            ]}
+          >
+            {icons.map((icon, id) => <link key={`icon-${id}`} {...icon} />)}
+
+            {/* @TODO: Updates the following meta */}
+            <meta name="msapplication-TileColor" content="#ffffff" />
+            <meta name="msapplication-TileImage" content={msIcon144x144} />
+            <meta name="theme-color" content="#ffffff" />
+            {/* @TODO: Check the above ^^ */}
+          </Helmet>
+          <Header data={data} location={location} />
+
+          <div>{children()}</div>
+        </div>
+      )}
+    </MyContext.Consumer>
+  </MyProvider>
 )
 
 TemplateWrapper.propTypes = {
