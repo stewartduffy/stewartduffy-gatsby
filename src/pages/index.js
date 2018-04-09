@@ -1,12 +1,11 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import { ContentBlock } from '../components/ContentBlock'
-import styles from './index.module.scss'
 
 const IndexPage = ({ data }) => {
   if (!data) return null
   return (
-    <div className={`container ${styles['main-container']}`}>
+    <div>
       {data.contentfulPostPage.contentBlock.map(
         ({ id, childContentfulContentBlockBodyTextNode, icon, slug }) => (
           <ContentBlock

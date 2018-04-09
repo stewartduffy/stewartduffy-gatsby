@@ -3,16 +3,16 @@
 
 .header {
   background: $theme-green;
-  height: 195px;
   position: relative;
+  height: 142px;
   padding-top: 40px;
+  z-index: $z-index-2;
 }
 
 .heading-logo {
   width: 210px;
   height: auto;
   position: relative;
-  top: 25px; //@TODO: Make this cleaner
   margin: 0 auto;
   z-index: 5;
   display: block;
@@ -20,6 +20,5 @@
 
   @media (min-width: $screen-md) {
     width: 258px;
-    top: 0;
   }
 }

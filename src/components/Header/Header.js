@@ -12,7 +12,6 @@ const Header = ({ data, location }) => (
       src={logo}
       alt="Stewart Duffy / Front-End Developer"
     />
-    <Nav />
   </div>
 )
 
