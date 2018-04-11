@@ -14,4 +14,6 @@ A list of more in-depth reading that I need to brush up on, mostly related to ab
 - [ ] https://hackernoon.com/my-approach-to-using-z-index-eca67feb079c
 - [ ] https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context
 - [ ] https://tiffanybbrown.com/2015/09/css-stacking-contexts-wtf/index.html
-- [ ] https://philipwalton.com/articles/what-no-one-told-you-about-z-index/ 
+- [ ] https://philipwalton.com/articles/what-no-one-told-you-about-z-index/
+- [ ] https://csstriggers.com/
+- [ ] https://developers.google.com/web/fundamentals/performance/rendering/
