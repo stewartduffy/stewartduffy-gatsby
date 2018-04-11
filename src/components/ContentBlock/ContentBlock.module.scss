@@ -36,6 +36,8 @@
   font-family: 'Merriweather', serif;
   font-weight: 300;
   font-size: 16px; //@TODO: Maybe style the p, li etc
+  position: relative;
+  z-index: $z-index-1;
 
   h1,
   h2,
