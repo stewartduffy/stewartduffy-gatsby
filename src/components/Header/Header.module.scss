@@ -18,11 +18,8 @@
 .heading-logo {
   width: 210px;
   height: auto;
-  position: relative;
   margin: 0 auto;
-  z-index: 5;
   display: block;
-  z-index: $z-index-3;
   transition: width 0.3s ease-out, top 0.3s ease-out;
 
   @media (min-width: $screen-md) {
