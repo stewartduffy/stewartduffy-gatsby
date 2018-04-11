@@ -4,9 +4,14 @@
 .header {
   background: $theme-green;
   position: relative;
-  height: 142px;
+  height: 118px;
   padding-top: 40px;
   z-index: $z-index-3;
+  transition: height 0.3s ease-out;
+
+  @media (min-width: $screen-md) {
+    height: 142px;
+  }
 }
 
 .heading-logo {

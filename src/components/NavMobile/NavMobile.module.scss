@@ -7,7 +7,7 @@
   right: 20px;
   max-width: calc(100% - 40px);
   max-height: calc(100% - 40px);
-  z-index: 99;
+  z-index: $z-index-5;
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: 100%;
@@ -52,7 +52,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 90;
+  z-index: $z-index-4;
   background-color: $theme-black;
   pointer-events: none;
 }
