@@ -18,3 +18,13 @@ $z-index-9: 900;
 $z-index-10: 1000;
 
 $hash-tag-links-padding: 75px;
+
+/* Fonts */
+$systemSerif: 'Apple Garamond', 'Baskerville', 'Times New Roman', 'Droid Serif',
+  'Times', 'Source Serif Pro', serif;
+
+$systemMonospace: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Mono',
+  'Droid Sans Mono', 'Source Code Pro', monospace;
+
+$theme-sans-serif: 'Oswald', system-ui;
+$theme-serif: 'Merriweather', $systemSerif;

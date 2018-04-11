@@ -20,7 +20,7 @@
 .content-block-heading {
   font-weight: 300;
   margin-top: 0;
-  font-family: 'Oswald', sans-serif;
+  font-family: $theme-sans-serif;
 
   &::before {
     display: block;
@@ -33,7 +33,7 @@
 }
 
 .content-block-html {
-  font-family: 'Merriweather', serif;
+  font-family: $theme-serif;
   font-weight: 300;
   font-size: 16px; //@TODO: Maybe style the p, li etc
   position: relative;
@@ -43,7 +43,7 @@
   h2,
   h3 {
     margin-top: 0;
-    font-family: 'Oswald', sans-serif;
+    font-family: $theme-sans-serif;
   }
 
   ul em {

@@ -1,11 +1,10 @@
-@import '../../scss/fonts.scss';
 @import '../../scss/vender/bootstrap/_variables';
 @import '../../scss/theme';
 
 .nav-item-link {
   color: $theme-white;
   font-size: 20px;
-  font-family: 'Oswald', sans-serif;
+  font-family: $theme-sans-serif;
 
   &:hover,
   &.active {
