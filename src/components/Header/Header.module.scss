@@ -6,8 +6,8 @@
   position: relative;
   height: 118px;
   padding-top: 40px;
+  // transition: height 0.3s ease-out;
   z-index: $z-index-3;
-  transition: height 0.3s ease-out;
 
   @media (min-width: $screen-md) {
     height: 142px;
@@ -21,7 +21,8 @@
   margin: 0 auto;
   z-index: 5;
   display: block;
-  transition: width 0.3s ease-out, top 0.3s ease-out;
+  z-index: $z-index-3;
+  // transition: width 0.3s ease-out, top 0.3s ease-out;
 
   @media (min-width: $screen-md) {
     width: 258px;
