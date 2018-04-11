@@ -7,11 +7,18 @@ const IndexPage = ({ data }) => {
   return (
     <div>
       {data.contentfulPostPage.contentBlock.map(
-        ({ id, childContentfulContentBlockBodyTextNode, icon, slug }) => (
+        ({
+          id,
+          childContentfulContentBlockBodyTextNode,
+          icon,
+          slug,
+          title,
+        }) => (
           <ContentBlock
             key={id}
             slug={slug}
             icon={icon}
+            title={title}
             data={childContentfulContentBlockBodyTextNode}
           />
         )
@@ -37,6 +44,7 @@ export const query = graphql`
         id
         icon
         slug
+        title
         childContentfulContentBlockBodyTextNode {
           id
           childMarkdownRemark {

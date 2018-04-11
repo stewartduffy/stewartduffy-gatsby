@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-
+import MyContext from '../../context'
+import { NavMobile } from '../NavMobile'
 import { NavIcon } from '../NavIcon'
 import { NavItem } from '../NavItem'
-import MyContext from '../../context'
 import styles from './Nav.module.scss'
 import cv from '../../../static/assets/stewart_duffy_cv.pdf'
 

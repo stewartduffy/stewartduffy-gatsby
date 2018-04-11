@@ -17,6 +17,21 @@
   }
 }
 
+.content-block-heading {
+  font-weight: 300;
+  margin-top: 0;
+  font-family: 'Oswald', sans-serif;
+
+  &::before {
+    display: block;
+    content: ' ';
+    margin-top: -$hash-tag-links-padding;
+    height: $hash-tag-links-padding;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
 .content-block-html {
   font-family: 'Merriweather', serif;
   font-weight: 300;
