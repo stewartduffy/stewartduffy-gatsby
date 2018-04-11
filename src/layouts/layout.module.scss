@@ -1,8 +1,7 @@
 @import '../scss/theme';
 
 .mobile-nav-open {
-  height: 0;
-  overflow: hidden;
+  display: none;
 }
 
 .main-container {
