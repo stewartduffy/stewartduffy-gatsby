@@ -7,6 +7,7 @@ A list of resources, tutorials & credits that were helpful.
 - Z-Index bug:
   - [ios-z-index-ordering-bug-while-scrolling](https://css-tricks.com/forums/topic/safari-for-ios-z-index-ordering-bug-while-scrolling-a-page-with-a-fixed-element/)
   - [while-scrolling-on-an-ios-device-the-z-index-of-elements-isnt-working](https://stackoverflow.com/questions/16033416/while-scrolling-on-an-ios-device-the-z-index-of-elements-isnt-working)
+  - [See here](https://github.com/stewartduffy/stewartduffy-gatsby/blob/ebd5551d0f92b6df83d8337d14c6bccafa31720f/src/components/Header/Header.module.scss#L11)
 
 
 ## Todo
