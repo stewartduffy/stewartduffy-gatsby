@@ -17,3 +17,4 @@ A list of more in-depth reading that I need to brush up on, mostly related to ab
 - [ ] https://philipwalton.com/articles/what-no-one-told-you-about-z-index/
 - [ ] https://csstriggers.com/
 - [ ] https://developers.google.com/web/fundamentals/performance/rendering/
+- [ ] https://gist.github.com/trbngr/ed47363caeb5edb0a98b
