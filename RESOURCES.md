@@ -19,3 +19,9 @@ A list of more in-depth reading that I need to brush up on, mostly related to ab
 - [ ] https://csstriggers.com/
 - [ ] https://developers.google.com/web/fundamentals/performance/rendering/
 - [ ] https://gist.github.com/trbngr/ed47363caeb5edb0a98b
+
+
+
+## Design Inspiration
+- [Stumptown coffee](https://www.stumptowncoffee.com/)
+- [Owltastic](http://owltastic.com/category/notes/)
