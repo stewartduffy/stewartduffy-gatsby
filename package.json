@@ -16,6 +16,7 @@
     "gatsby-source-filesystem": "^1.5.21",
     "gatsby-transformer-remark": "^1.7.36",
     "lost": "^8.2.1",
+    "moment-timezone": "^0.5.14",
     "postcss-cli": "^5.0.0",
     "react-helmet": "^5.2.0"
   },
@@ -32,6 +33,13 @@
     "cleanup": "rm -rf node_modules/gh-pages/.cache"
   },
   "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.19.1",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-plugin-flowtype": "^2.46.2",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.7.0",
     "gh-pages": "^1.1.0",
     "prettier": "^1.11.1"
   },
