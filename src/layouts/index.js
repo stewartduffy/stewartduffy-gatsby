@@ -2,9 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import MyContext from '../context'
-import { Header } from '../components/Header'
-import { Nav } from '../components/Nav'
-import { Favicons } from '../components/Favicons'
+import { Header, Footer, Nav, Favicons } from '../components'
 import '../scss/base.scss'
 import styles from './layout.module.scss'
 
@@ -59,6 +57,7 @@ const TemplateWrapper = ({ children, data, location }) => (
           <div className={`container ${styles['main-container']}`}>
             {children()}
           </div>
+          <Footer data={data} />
         </div>
       )}
     </MyContext.Consumer>
@@ -74,6 +73,7 @@ export default TemplateWrapper
 export const query = graphql`
   query LayoutQuery {
     site {
+      buildTimeZone
       siteMetadata {
         title
         description
