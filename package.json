@@ -7,6 +7,7 @@
     "font-awesome-svg-png": "^1.2.2",
     "gatsby": "^1.9.241",
     "gatsby-link": "^1.6.39",
+    "gatsby-plugin-buildtime-timezone": "^1.0.1",
     "gatsby-plugin-google-fonts": "0.0.4",
     "gatsby-plugin-postcss-sass": "^1.0.19",
     "gatsby-plugin-react-helmet": "^2.0.8",
@@ -20,9 +21,7 @@
     "postcss-cli": "^5.0.0",
     "react-helmet": "^5.2.0"
   },
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": ["gatsby"],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
@@ -31,6 +30,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "npm run cleanup && gatsby build && gh-pages -d public -b master",
     "cleanup": "rm -rf node_modules/gh-pages/.cache"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stewartduffy/stewartduffy-gatsby"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
@@ -43,9 +46,5 @@
     "gh-pages": "^1.1.0",
     "prettier": "^1.11.1"
   },
-  "browserslist": [
-    "last 4 versions",
-    "ie 8",
-    "ie 9"
-  ]
+  "browserslist": ["last 4 versions", "ie 8", "ie 9"]
 }

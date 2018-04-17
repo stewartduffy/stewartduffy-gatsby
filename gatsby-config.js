@@ -50,5 +50,6 @@ module.exports = {
     },
     'gatsby-transformer-remark',
     'gatsby-plugin-react-next',
+    'gatsby-plugin-buildtime-timezone',
   ],
 }
