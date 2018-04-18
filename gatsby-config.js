@@ -50,6 +50,12 @@ module.exports = {
     },
     'gatsby-transformer-remark',
     'gatsby-plugin-react-next',
-    'gatsby-plugin-buildtime-timezone',
+    {
+      resolve: 'gatsby-plugin-buildtime-timezone',
+      options: {
+        tz: 'Pacific/Auckland',
+        format: 'ddd, DD MMM YYYY hh:mm A',
+      },
+    },
   ],
 }
