@@ -1,6 +1,6 @@
 // const theme = {
 export const themeWhite = '#fff'
-export const themethemeBlack = '#323232'
+export const themeBlack = '#323232'
 export const themeCanvas = '#cbcbcb'
 export const themeGreen = '#657e6c'
 export const hashTagLinksPadding = '75px'
