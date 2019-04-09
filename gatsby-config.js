@@ -8,6 +8,12 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        displayName: true,
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [`andada`, 'Oswald', 'Merriweather'],
@@ -23,8 +29,7 @@ module.exports = {
       resolve: 'gatsby-source-contentful',
       options: {
         spaceId: 'yp5gwejfy67m',
-        accessToken:
-          'af31950799415738e1f52d5f4a9c1a68d1109fafd0743923d4db48a04d3c8154',
+        accessToken: 'af31950799415738e1f52d5f4a9c1a68d1109fafd0743923d4db48a04d3c8154',
       },
     },
     'gatsby-plugin-react-helmet',
