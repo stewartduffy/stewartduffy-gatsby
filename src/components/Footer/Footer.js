@@ -1,10 +1,17 @@
 import React from 'react'
-import styles from './Footer.module.scss'
+import styled from 'styled-components'
+import * as theme from '../../config/theme'
+
+const StyledFooter = styled.div`
+  padding: 20px;
+  background: ${theme.themeBlack};
+  color: ${theme.themeWhite};
+`
 
 const Footer = ({ data }) => (
-  <div className={styles['footer']}>
+  <StyledFooter>
     <h4>Last updated: {data.site.buildTimeZone}</h4>
-  </div>
+  </StyledFooter>
 )
 
 export default Footer
