@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "author": "Stewart Duffy",
   "dependencies": {
+    "@humblebee/styled-components-breakpoint": "^2.1.4",
     "autoprefixer": "^9.5.1",
     "babel-plugin-styled-components": "^1.10.0",
     "font-awesome-svg-png": "^1.2.2",
