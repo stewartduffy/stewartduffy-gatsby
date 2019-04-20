@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import { ContentBlock } from '../components/ContentBlock'
 
 const IndexPage = ({ data }) => {

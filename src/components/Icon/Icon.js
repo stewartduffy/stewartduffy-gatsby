@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Icon.module.scss'
+import styles from './Icon.module.css'
 import TimesCircle from '../../svg-icons/times-circle.svg'
 import * as Icons from '../../svg-icons'
 

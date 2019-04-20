@@ -111,7 +111,9 @@ const ContentBlockHtml = styled.div`
   }
 `
 
-const ContentBlock = ({ data, icon, slug, title }) => (
+const ContentBlock = ({ data, icon, slug, title }) => {
+  
+  return (
   <StyledContentBlock>
     <ColMd1>
       <Icon name={icon} />
@@ -127,6 +129,6 @@ const ContentBlock = ({ data, icon, slug, title }) => (
       />
     </ColMd11>
   </StyledContentBlock>
-)
+)}
 
 export default ContentBlock
