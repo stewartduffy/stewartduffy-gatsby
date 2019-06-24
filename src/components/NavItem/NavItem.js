@@ -1,13 +1,19 @@
-import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
-import Link, { navigateTo } from 'gatsby-link'
+import React from 'react'
+import styled from 'styled-components'
 import { NavLink } from '../NavLink'
-import styles from './NavItem.module.scss'
+
+const StyledNavItem = styled.span`
+  line-height: 53px;
+  & + &::before {
+    padding: 5px;
+    content: ' • ';
+  }
+`
 
 const NavItem = ({ text, href }) => (
-  <span className={styles['nav-item']}>
+  <StyledNavItem>
     <NavLink text={text} href={href} />
-  </span>
+  </StyledNavItem>
 )
 
 export default NavItem
