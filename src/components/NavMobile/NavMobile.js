@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
-import Link, { navigateTo } from 'gatsby-link'
 import { NavLink } from '../NavLink'
 import { NavIcon } from '../NavIcon'
 import styles from './NavMobile.module.scss'
@@ -30,20 +29,13 @@ const links = [
 ]
 
 const NavMobile = class extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.escFunction = this.escFunction.bind(this)
-    this.onNavLinkClick = this.onNavLinkClick.bind(this)
-  }
-
-  escFunction(event) {
+  escFunction = event => {
     if (event.keyCode === 27) {
       this.props.handleMenuClick()
     }
   }
 
-  onNavLinkClick(event) {
+  onNavLinkClick = event => {
     this.props.handleMenuClick()
   }
 
@@ -66,11 +58,7 @@ const NavMobile = class extends React.Component {
           <ul className={`${styles['nav-mobile-list']}`}>
             {links.map(({ text, href }, id) => (
               <li key={`MobileNavLink-${id}`}>
-                <NavLink
-                  text={text}
-                  href={href}
-                  onClick={this.onNavLinkClick}
-                />
+                <NavLink text={text} href={href} onClick={this.onNavLinkClick} />
               </li>
             ))}
           </ul>
