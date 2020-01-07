@@ -16,7 +16,7 @@
     "gatsby-source-contentful": "^1.3.44",
     "gatsby-source-filesystem": "^1.5.21",
     "gatsby-transformer-remark": "^1.7.36",
-    "postcss-cli": "^6.1.2",
+    "postcss-cli": "^7.0.0",
     "react-helmet": "^5.2.0"
   },
   "keywords": [
