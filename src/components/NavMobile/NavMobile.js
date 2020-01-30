@@ -1,33 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
-import Link, { navigateTo } from 'gatsby-link'
 import { NavLink } from '../NavLink'
 import { NavIcon } from '../NavIcon'
 import styles from './NavMobile.module.scss'
-import cv from '../../../static/assets/stewart_duffy_cv.pdf'
-
-const links = [
-  {
-    text: 'What I Do',
-    href: '#what-i-do',
-  },
-  {
-    text: 'Conferences & Workshops',
-    href: '#conferences-workshops',
-  },
-  {
-    text: 'Work',
-    href: '#work-history',
-  },
-  {
-    text: 'Contact',
-    href: '#lets-talk',
-  },
-  {
-    text: 'CV',
-    href: cv,
-  },
-]
 
 const NavMobile = class extends React.Component {
   constructor(props) {
@@ -56,7 +31,8 @@ const NavMobile = class extends React.Component {
   }
 
   render() {
-    const { handleMenuClick } = this.props
+    const { handleMenuClick, sortedLinks } = this.props
+
     return ReactDOM.createPortal(
       <React.Fragment>
         <nav className={`${styles['nav-mobile']}`} role="navigation">
@@ -64,11 +40,11 @@ const NavMobile = class extends React.Component {
             <NavIcon iconClass="times" onClick={handleMenuClick} />
           </div>
           <ul className={`${styles['nav-mobile-list']}`}>
-            {links.map(({ text, href }, id) => (
+            {sortedLinks.map(({ text, link }, id) => (
               <li key={`MobileNavLink-${id}`}>
                 <NavLink
                   text={text}
-                  href={href}
+                  href={link}
                   onClick={this.onNavLinkClick}
                 />
               </li>
