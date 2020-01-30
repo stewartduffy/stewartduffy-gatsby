@@ -5,9 +5,7 @@ import MyContext from '../../context'
 import { NavMobile } from '../NavMobile'
 import { NavIcon } from '../NavIcon'
 import { NavItem } from '../NavItem'
-import cv from '../../../static/assets/stewart_duffy_cv.pdf'
 import { themeWhite, themeBlack, zIndex_2 } from '../../config/theme'
-import styles from './Nav.module.scss'
 import flow from 'lodash/fp/flow'
 import map from 'lodash/fp/map'
 import flatten from 'lodash/fp/flatten'
@@ -56,30 +54,6 @@ const NavMobileLinks = styled.nav`
   }
 `
 
-const Nav = () => (
-  <MyContext.Consumer>
-    {context => (
-      <NavContainer>
-        <NavSocial>
-          <NavIcon iconClass="linkedin" href="http://nz.linkedin.com/in/stewartduffy/en" />
-          <NavIcon iconClass="twitter" href="https://twitter.com/sbf_duffy" />
-          <NavIcon iconClass="githubAlt" href="http://github.com/stewartduffy" />
-          <NavIcon iconClass="spotify" href="https://open.spotify.com/user/1143680138" />
-        </NavSocial>
-        <NavLinks>
-          <NavItem text="What I Do" href="#what-i-do" />
-          <NavItem text="Work" href="#work-history" />
-          <NavItem text="Contact" href="#lets-talk" />
-          <NavItem text="CV" href={cv} />
-        </NavLinks>
-        <NavMobileLinks>
-          <NavIcon iconClass="bars" onClick={context.toggleMobileNavOpen} />
-          {context.state.mobileNavOpen && <NavMobile handleMenuClick={context.toggleMobileNavOpen} />}
-        </NavMobileLinks>
-      </NavContainer>
-    )}
-  </MyContext.Consumer>
-)
 const Nav = ({ navLinks }) => {
   const sortedLinks = flow(
     map(({ node }) => {
@@ -96,38 +70,25 @@ const Nav = ({ navLinks }) => {
   return (
     <MyContext.Consumer>
       {context => (
-        <div className={`${styles['nav-container']} clearfix`}>
-          <nav className={`${styles['nav-social']} pull-left hidden-xs`}>
-            <NavIcon
-              iconClass="linkedin"
-              href="http://nz.linkedin.com/in/stewartduffy/en"
-            />
+        <NavContainer>
+          <NavSocial>
+            <NavIcon iconClass="linkedin" href="http://nz.linkedin.com/in/stewartduffy/en" />
             <NavIcon iconClass="twitter" href="https://twitter.com/sbf_duffy" />
-            <NavIcon
-              iconClass="githubAlt"
-              href="http://github.com/stewartduffy"
-            />
-            <NavIcon iconClass="skype" href="skype:stewart.duffy" />
-            <NavIcon
-              iconClass="spotify"
-              href="https://open.spotify.com/user/1143680138"
-            />
-          </nav>
-          <nav className="pull-right hidden-xs">
+            <NavIcon iconClass="githubAlt" href="http://github.com/stewartduffy" />
+            <NavIcon iconClass="spotify" href="https://open.spotify.com/user/1143680138" />
+          </NavSocial>
+          <NavLinks>
             {sortedLinks.map(({ text, link }, id) => (
               <NavItem text={text} href={link} key={`NavLink-${id}`} />
             ))}
-          </nav>
-          <nav className="pull-right visible-xs">
+          </NavLinks>
+          <NavMobileLinks>
             <NavIcon iconClass="bars" onClick={context.toggleMobileNavOpen} />
             {context.state.mobileNavOpen && (
-              <NavMobile
-                sortedLinks={sortedLinks}
-                handleMenuClick={context.toggleMobileNavOpen}
-              />
+              <NavMobile sortedLinks={sortedLinks} handleMenuClick={context.toggleMobileNavOpen} />
             )}
-          </nav>
-        </div>
+          </NavMobileLinks>
+        </NavContainer>
       )}
     </MyContext.Consumer>
   )

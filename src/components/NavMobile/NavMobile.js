@@ -1,38 +1,25 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 import { NavLink } from '../NavLink'
 import { NavIcon } from '../NavIcon'
-import styles from './NavMobile.module.scss'
-import cv from '../../../static/assets/stewart_duffy_cv.pdf'
+import styled from 'styled-components'
+import { theme } from '../../config'
 
-const links = [
-  {
-    text: 'What I Do',
-    href: '#what-i-do',
-  },
-  {
-    text: 'Conferences & Workshops',
-    href: '#conferences-workshops',
-  },
-  {
-    text: 'Work',
-    href: '#work-history',
-  },
-  {
-    text: 'Contact',
-    href: '#lets-talk',
-  },
-  {
-    text: 'CV',
-    href: cv,
-  },
-]
+const StyledNavMobile = styled.nav`
+  background: #323232;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  max-width: calc(100% - 40px);
+  max-height: calc(100% - 40px);
+  z-index: ${theme.zIndex_5};
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+`
 
-const NavMobile = class extends React.Component {
-  constructor(props) {
-    super(props)
-
-//@TODO: Give this a class
 const NavMobileClose = styled.div`
   text-align: right;
   position: absolute;
@@ -97,29 +84,21 @@ const NavMobile = class extends React.Component {
     const { handleMenuClick, sortedLinks } = this.props
 
     return ReactDOM.createPortal(
-      <Fragment>
+      <React.Fragment>
         <StyledNavMobile role="navigation">
           <NavMobileClose>
             <NavIcon iconClass="times" onClick={handleMenuClick} />
           </NavMobileClose>
           <NavMobileList>
-            {links.map(({ text, href }, id) => (
-          </div>
-          <ul className={`${styles['nav-mobile-list']}`}>
-            {sortedLinks.map(({ text, link }, id) => (
+            {sortedLinks.map(({ text, href }, id) => (
               <li key={`MobileNavLink-${id}`}>
                 <NavLink text={text} href={href} onClick={this.onNavLinkClick} />
-                <NavLink
-                  text={text}
-                  href={link}
-                  onClick={this.onNavLinkClick}
-                />
               </li>
             ))}
           </NavMobileList>
         </StyledNavMobile>
         <NavMobileOverlay />
-      </Fragment>,
+      </React.Fragment>,
       document.getElementById('___gatsby')
     )
   }

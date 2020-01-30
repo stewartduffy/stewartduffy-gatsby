@@ -7,10 +7,6 @@ import { Header, Footer, Nav, Favicons } from '../components'
 import styled from 'styled-components'
 import * as theme from '../config/theme'
 import BaseStyles from './BaseStyles'
-import { Header, Footer, Favicons } from '../components'
-import Nav from '../components/Nav/Nav'
-import styles from './layout.module.scss'
-import '../scss/base.scss'
 
 const Container = styled.div`
   margin-right: auto;
@@ -38,7 +34,7 @@ const MainContainer = styled(Container)`
 `
 
 const MobileNav = styled(Container)`
-  display: ${props => (props.isOpen ? 'none' : 'unset')};
+  display: ${({ isOpen }) => (isOpen ? 'none' : 'unset')};
 `
 
 class MyProvider extends React.Component {
@@ -71,33 +67,31 @@ class MyProvider extends React.Component {
   }
 }
 
-const TemplateWrapper = ({ children, data, location }) => (
-  <MyProvider>
-    <MyContext.Consumer>
-      {({ state }) => (
-        <div className={state.mobileNavOpen ? styles['mobile-nav-open'] : null}>
-          <Helmet>
-            <title>{data.site.siteMetadata.title}</title>
-            <meta
-              name="description"
-              content={data.site.siteMetadata.description}
-            />
-            <meta name="keywords" content={'sample, something'} />
-          </Helmet>
-          <Favicons />
+const TemplateWrapper = ({ children, data, location }) => {
+  const navLinks = get(data, 'allContentfulNavLink.edges')
 
-          <Header data={data} location={location} />
-          <Nav />
-
-          <div className={`container ${styles['main-container']}`}>
-            {children()}
-          </div>
-          <Footer data={data} />
-        </div>
-      )}
-    </MyContext.Consumer>
-  </MyProvider>
-)
+  return (
+    <MyProvider>
+      <MyContext.Consumer>
+        {({ state }) => (
+          <MobileNav isOpen={state.mobileNavOpen}>
+            <Helmet>
+              <title>{data.site.siteMetadata.title}</title>
+              <meta name="description" content={data.site.siteMetadata.description} />
+              <meta name="keywords" content={'sample, something'} />
+            </Helmet>
+            <Favicons />
+            <BaseStyles />
+            <Header data={data} location={location} />
+            <Nav navLinks={navLinks} />
+            <MainContainer>{children()}</MainContainer>
+            <Footer data={data} />
+          </MobileNav>
+        )}
+      </MyContext.Consumer>
+    </MyProvider>
+  )
+}
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func,
