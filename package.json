@@ -6,7 +6,7 @@
     "autoprefixer": "^9.5.1",
     "font-awesome-svg-png": "^1.2.2",
     "gatsby": "^1.9.241",
-    "gatsby-link": "^1.6.39",
+    "gatsby-link": "^1.6.46",
     "gatsby-plugin-buildtime-timezone": "^1.0.3",
     "gatsby-plugin-google-fonts": "0.0.4",
     "gatsby-plugin-postcss-sass": "^1.0.19",
