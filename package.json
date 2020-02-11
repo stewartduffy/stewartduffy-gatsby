@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "author": "Stewart Duffy",
   "dependencies": {
-    "autoprefixer": "^9.5.1",
+    "autoprefixer": "^9.7.4",
     "font-awesome-svg-png": "^1.2.2",
     "gatsby": "^1.9.241",
     "gatsby-link": "^1.6.46",
     "gatsby-plugin-buildtime-timezone": "^1.0.3",
     "gatsby-plugin-google-fonts": "0.0.4",
-    "gatsby-plugin-postcss-sass": "^1.0.19",
+    "gatsby-plugin-postcss-sass": "^1.0.22",
     "gatsby-plugin-react-helmet": "^2.0.11",
     "gatsby-plugin-react-next": "^1.0.11",
     "gatsby-plugin-react-svg": "^1.1.1",
@@ -17,7 +17,7 @@
     "gatsby-source-filesystem": "^1.5.21",
     "gatsby-transformer-remark": "^1.7.36",
     "postcss-cli": "^6.1.2",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.1"
   },
   "keywords": [
     "gatsby"
@@ -40,10 +40,10 @@
     "eslint": "^5.16.0",
     "eslint-config-react-app": "^3.0.8",
     "eslint-plugin-flowtype": "^3.6.0",
-    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.18.3",
-    "prettier": "^1.16.4"
+    "prettier": "^1.19.1"
   },
   "browserslist": [
     "last 4 versions",
