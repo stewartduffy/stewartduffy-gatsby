@@ -3,8 +3,38 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import MyContext from '../context'
 import { Header, Footer, Nav, Favicons } from '../components'
+import styled from 'styled-components'
+import * as theme from '../config/theme'
 import '../scss/base.scss'
-import styles from './layout.module.scss'
+
+const Container = styled.div`
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @media (min-width: 768px) {
+    width: 750px;
+  }
+
+  @media (min-width: 992px) {
+    width: 970px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 1170px;
+  }
+`
+
+const MainContainer = styled(Container)`
+  margin-top: 138px;
+  border-top: ${theme.themeBlack} solid 2px;
+  transition: width 0.3s ease-out;
+`
+
+const MobileNav = styled(Container)`
+  display: ${props => (props.isOpen ? 'none' : 'unset')};
+`
 
 class MyProvider extends React.Component {
   constructor(props) {
@@ -40,25 +70,18 @@ const TemplateWrapper = ({ children, data, location }) => (
   <MyProvider>
     <MyContext.Consumer>
       {({ state }) => (
-        <div className={state.mobileNavOpen ? styles['mobile-nav-open'] : null}>
+        <MobileNav isOpen={state.mobileNavOpen}>
           <Helmet>
             <title>{data.site.siteMetadata.title}</title>
-            <meta
-              name="description"
-              content={data.site.siteMetadata.description}
-            />
+            <meta name="description" content={data.site.siteMetadata.description} />
             <meta name="keywords" content={'sample, something'} />
           </Helmet>
           <Favicons />
-
           <Header data={data} location={location} />
           <Nav />
-
-          <div className={`container ${styles['main-container']}`}>
-            {children()}
-          </div>
+          <MainContainer>{children()}</MainContainer>
           <Footer data={data} />
-        </div>
+        </MobileNav>
       )}
     </MyContext.Consumer>
   </MyProvider>
