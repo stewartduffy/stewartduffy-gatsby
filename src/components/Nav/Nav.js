@@ -59,7 +59,6 @@ const Nav = () => (
           <NavIcon iconClass="linkedin" href="http://nz.linkedin.com/in/stewartduffy/en" />
           <NavIcon iconClass="twitter" href="https://twitter.com/sbf_duffy" />
           <NavIcon iconClass="githubAlt" href="http://github.com/stewartduffy" />
-          <NavIcon iconClass="skype" href="skype:stewart.duffy" />
           <NavIcon iconClass="spotify" href="https://open.spotify.com/user/1143680138" />
         </NavSocial>
         <NavLinks>
