@@ -22,7 +22,8 @@
     "polished": "^3.2.0",
     "postcss-cli": "^6.1.2",
     "react-helmet": "^5.2.0",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.2.0",
+    "styled-normalize": "^8.0.7"
   },
   "keywords": [
     "gatsby"

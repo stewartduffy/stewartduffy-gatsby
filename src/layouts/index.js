@@ -5,7 +5,7 @@ import MyContext from '../context'
 import { Header, Footer, Nav, Favicons } from '../components'
 import styled from 'styled-components'
 import * as theme from '../config/theme'
-import '../scss/base.scss'
+import BaseStyles from './BaseStyles'
 
 const Container = styled.div`
   margin-right: auto;
@@ -71,6 +71,7 @@ const TemplateWrapper = ({ children, data, location }) => (
     <MyContext.Consumer>
       {({ state }) => (
         <MobileNav isOpen={state.mobileNavOpen}>
+          <BaseStyles />
           <Helmet>
             <title>{data.site.siteMetadata.title}</title>
             <meta name="description" content={data.site.siteMetadata.description} />
