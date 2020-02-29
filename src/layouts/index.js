@@ -1,11 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import get from 'lodash/get'
 import MyContext from '../context'
 import { Header, Footer, Nav, Favicons } from '../components'
 import styled from 'styled-components'
 import * as theme from '../config/theme'
 import BaseStyles from './BaseStyles'
+import { Header, Footer, Favicons } from '../components'
+import Nav from '../components/Nav/Nav'
+import styles from './layout.module.scss'
+import '../scss/base.scss'
 
 const Container = styled.div`
   margin-right: auto;
@@ -70,19 +75,25 @@ const TemplateWrapper = ({ children, data, location }) => (
   <MyProvider>
     <MyContext.Consumer>
       {({ state }) => (
-        <MobileNav isOpen={state.mobileNavOpen}>
-          <BaseStyles />
+        <div className={state.mobileNavOpen ? styles['mobile-nav-open'] : null}>
           <Helmet>
             <title>{data.site.siteMetadata.title}</title>
-            <meta name="description" content={data.site.siteMetadata.description} />
+            <meta
+              name="description"
+              content={data.site.siteMetadata.description}
+            />
             <meta name="keywords" content={'sample, something'} />
           </Helmet>
           <Favicons />
+
           <Header data={data} location={location} />
           <Nav />
-          <MainContainer>{children()}</MainContainer>
+
+          <div className={`container ${styles['main-container']}`}>
+            {children()}
+          </div>
           <Footer data={data} />
-        </MobileNav>
+        </div>
       )}
     </MyContext.Consumer>
   </MyProvider>
@@ -101,6 +112,15 @@ export const query = graphql`
       siteMetadata {
         title
         description
+      }
+    }
+    allContentfulNavLink {
+      edges {
+        node {
+          text
+          link
+          order
+        }
       }
     }
   }
