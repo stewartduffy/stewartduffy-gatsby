@@ -1,6 +1,6 @@
 {
   "name": "stewartduffy.com",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": "Stewart Duffy",
   "dependencies": {
     "@humblebee/styled-components-breakpoint": "^2.1.4",
