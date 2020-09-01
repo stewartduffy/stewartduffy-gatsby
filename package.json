@@ -19,7 +19,7 @@
     "gatsby-transformer-remark": "^1.7.36",
     "polished": "^3.2.0",
     "lodash": "^4.17.15",
-    "postcss-cli": "^6.1.2",
+    "postcss-cli": "^7.1.2",
     "react-helmet": "^5.2.0",
     "styled-components": "^4.2.0",
     "styled-normalize": "^8.0.7"
